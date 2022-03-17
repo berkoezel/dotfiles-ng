@@ -1,0 +1,13 @@
+#!/bin/bash
+
+status=$(cmus-remote -Q | grep status) > /dev/null 2>&1
+artist=$(cmus-remote -Q | grep "tag artist" | cut -d ' ' -f 3-) > /dev/null 2>&1
+track=$(cmus-remote -Q | grep title | cut -d ' ' -f 3-) > /dev/null 2>&1
+
+if [ "$status" = "status paused" ]; then
+    output=" ${artist} - ${track}"
+elif [ "$status" = 'status playing' ]; then
+    output=" ${artist} - ${track}"
+fi
+echo $output
+pkill -RTMIN+12 dwmblocks;

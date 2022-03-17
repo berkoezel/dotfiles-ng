@@ -1,0 +1,16 @@
+#!/bin/sh
+
+capacity="$(cat "/sys/class/power_supply/BAT1/capacity" 2>&1)"
+
+if [ $capacity > 90 ]; then
+    icon=" "
+elif [ $capactiy > 70 ]; then 
+    icon=" "
+elif [ $capactiy > 40 ]; then
+    icon=" "
+elif [ $capactiy > 20 ]; then
+    icon=" "
+else 
+    icon=" "
+fi
+printf "$icon $capacity"

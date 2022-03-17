@@ -1,0 +1,50 @@
+# Space Duck
+colors:
+  # Default colors
+  primary:
+    background: '#1a1b24'
+    foreground: '#ecf0c1'
+  # Normal colors
+  normal:
+    black:   '#000000'
+    red:     '#fc0303'
+    green:   '#5ccc96'
+    yellow:  '#b3a1e6'
+    blue:    '#03a5fc'
+    magenta: '#f2ce00'
+    cyan:    '#7a5ccc'
+    white:   '#686f9a'
+
+  # Bright colors
+  bright:
+    black:   '#686f9a'
+    red:     '#fc0303'
+    green:   '#5ccc96'
+    yellow:  '#b3a1e6'
+    blue:    '#03a5fc'
+    magenta: '#f2ce00'
+    cyan:    '#7a5ccc'
+    white:   '#f0f1ce'
+window:
+    dynamic_title: false
+env:
+    WINIT_X11_SCALE_FACTOR: "1"
+font:
+  normal:
+    family: SFMono Nerd Font 
+    style: Medium 
+
+  bold:
+    family: SFMono Nerd Font
+    style: Bold
+
+  italic:
+    family: SFMono Nerd Font
+    style: Italic
+
+  bold_italic:
+    family: SFMono Nerd Font
+    style: Bold Italic
+
+  size: 10
+background_opacity: 0.9 

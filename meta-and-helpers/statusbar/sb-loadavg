@@ -1,0 +1,3 @@
+#!/bin/sh 
+
+printf " %s" $(cat /proc/loadavg | awk '{ print $1}')
