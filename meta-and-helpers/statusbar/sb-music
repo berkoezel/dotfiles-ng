@@ -5,9 +5,8 @@ artist=$(cmus-remote -Q | grep "tag artist" | cut -d ' ' -f 3-) > /dev/null 2>&1
 track=$(cmus-remote -Q | grep title | cut -d ' ' -f 3-) > /dev/null 2>&1
 
 if [ "$status" = "status paused" ]; then
-    output=" ${artist} - ${track}"
+    output="\xef\x81\x8c ${artist} - ${track}"
 elif [ "$status" = 'status playing' ]; then
-    output=" ${artist} - ${track}"
+    output="\xef\x81\x8b ${artist} - ${track}"
 fi
-echo $output
-pkill -RTMIN+12 dwmblocks;
+echo -e $output '|'

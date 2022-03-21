@@ -1,3 +1,4 @@
 #!/bin/sh
 
+# cmus triggers dwmblocks using this file to change it's state.
 pkill -RTMIN+12 dwmblocks;

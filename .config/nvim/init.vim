@@ -10,13 +10,15 @@ Plug 'cocopon/pgmnt.vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'
-Plug 'vim-syntastic/syntastic'
 Plug 'townk/vim-autoclose'
 Plug 'lilydjwg/colorizer'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
 Plug 'sjl/badwolf'
+Plug 'tribela/vim-transparent'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 "settings
@@ -40,36 +42,14 @@ function! InsertMapForEnter()
 endfunction
 
 "current theme
-colorscheme badwolf 
+set background=dark
+colorscheme PaperColor 
 let g:airline_theme = 'deus'
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0 
 let g:molokai_original = 1
 
 "hotkeys
 map <F5> :NERDTreeToggle<CR>
-
 "keybindings
 "TAB completion
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
-
-" for transparent background
-function! AdaptColorscheme()
-   highlight clear CursorLine
-   highlight Normal ctermbg=none
-   highlight LineNr ctermbg=none
-   highlight Folded ctermbg=none
-   highlight NonText ctermbg=none
-   highlight SpecialKey ctermbg=none
-   highlight VertSplit ctermbg=none
-   highlight SignColumn ctermbg=none
-endfunction
-autocmd ColorScheme * call AdaptColorscheme()
-
-highlight Normal guibg=NONE ctermbg=NONE
-highlight CursorColumn cterm=NONE ctermbg=NONE ctermfg=NONE
-highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE
-highlight CursorLineNr cterm=NONE ctermbg=NONE ctermfg=NONE
-highlight clear LineNr
-highlight clear SignColumn
-highlight clear StatusLine

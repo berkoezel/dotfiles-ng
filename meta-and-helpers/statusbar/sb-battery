@@ -3,14 +3,14 @@
 capacity="$(cat "/sys/class/power_supply/BAT1/capacity" 2>&1)"
 
 if [ $capacity > 90 ]; then
-    icon=" "
+    icon="\xef\x89\x80"
 elif [ $capactiy > 70 ]; then 
-    icon=" "
+    icon="xef\x89\x81"
 elif [ $capactiy > 40 ]; then
-    icon=" "
+    icon="\xef\x89\x82"
 elif [ $capactiy > 20 ]; then
-    icon=" "
+    icon="\xef\x89\x83"
 else 
-    icon=" "
+    icon="\xef\x89\x84"
 fi
-printf "$icon $capacity"
+echo -e  $icon $capacity

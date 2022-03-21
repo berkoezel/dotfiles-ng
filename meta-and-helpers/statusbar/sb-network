@@ -15,4 +15,4 @@ update() {
 rx=$(update /sys/class/net/[ew]*/statistics/rx_bytes)
 tx=$(update /sys/class/net/[ew]*/statistics/tx_bytes)
 
-printf "%4sB %4sB\\n" $(numfmt --to=iec $rx $tx)
+printf "\xef\x81\xa3 %3sB \xef\x81\xa2 %3sB" $(numfmt --to=iec $rx $tx)
