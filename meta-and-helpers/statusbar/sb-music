@@ -1,18 +1,35 @@
 #!/bin/bash
+
+cmus_running=$(ps -A | grep cmus)
+
+if [ "$cmus_running" = "" ]; then
+	echo ""
+	exit 1
+fi
+
 status=$(cmus-remote -Q | grep status) 
 
-if [ "$status" = "status paused" ]; then
-	statlogo="\xef\x81\x8c"
+if [ "$status" = "status stopped" ]; then
+	echo ""
+	exit 1
+elif [ "$status" = "status paused" ]; then
+	statlogo="⏸"
 elif [ "$status" = "status playing" ]; then
-	statlogo="\xef\x81\x8b"
+	statlogo="▶️"
 fi
 
 is_stream=$(cmus-remote -Q | grep -v file | grep stream)
 
 if [ "$(echo -e $is_stream | grep stream)" ]; then
-		echo -e  $(echo -e $is_stream | cut -c 8-)'|'
+		echo -e 📡 $(echo -e $is_stream | cut -c 8-)'|'
 else
-	artist=$(cmus-remote -Q | grep "tag artist" | cut -d ' ' -f 3-) 
-	track=$(cmus-remote -Q | grep title | cut -d ' ' -f 3-) 
-		echo -e $statlogo $artist - $track'|'
+	artist=$(cmus-remote -Q | grep "tag artist" | cut -d ' ' -f 3-)
+	track=$(cmus-remote -Q | grep title | cut -d ' ' -f 3-)
+	tracklength=$(echo -n "$track" | wc -m)
+	if [ $tracklength -gt 30 ]; then
+		dtrack=$(echo "$track" -n | cut -c -20) | awk '{ print $1 "... |"}'
+		echo 'sa' $dtrack
+		# WORK IN PROGRESS
+	fi
+	echo -e $statlogo $artist - $track'|'
 fi

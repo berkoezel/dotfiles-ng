@@ -37,6 +37,10 @@ alias java8="/usr/lib/jvm/java-1.8.0-amazon-corretto/bin/java"
 alias vim="nvim"
 alias lsalias="grep alias ~/.zshrc"
 alias sx='startx'
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias nano='nvim'
+alias vim='nvim'
+
 source $ZSH/oh-my-zsh.sh
 
 #zsh-options

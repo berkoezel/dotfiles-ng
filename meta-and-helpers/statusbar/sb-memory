@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo -e "\xef\x94\xb8 $(free --giga -h | awk 'NR==2 { print $3"/"$2 }')"
+echo -e "📟 $(free --giga -h | awk 'NR==2 { print $3"/"$2 }')"

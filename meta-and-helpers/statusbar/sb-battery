@@ -2,19 +2,4 @@
 
 capacity=$(cat /sys/class/power_supply/BAT1/capacity)
 
-if [[ $capacity -gt 90 ]] 
-	then 
-    	icon="\xef\x89\x80"
-elif [[ $capactiy -gt 70 ]]  
-	then
-		icon="\xef\x89\x81"
-elif [[ $capactiy -gt 40 ]]	
-	then
-		icon="\xef\x89\x82"
-elif [[ $capactiy -gt 20 ]]
-	then
-	   	icon="\xef\x89\x83"
-else 
-    icon="\xef\x89\x84"
-fi
-echo -e $icon $capacity
+echo -e 🔋 $capacity

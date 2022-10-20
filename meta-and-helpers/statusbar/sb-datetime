@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo -e "\xef\x80\x8b $(date '+%d/%m/%y - %a %H:%M')"
+echo -e "🗓 $(date '+%d/%m/%y|⌚%a %H:%M')"
