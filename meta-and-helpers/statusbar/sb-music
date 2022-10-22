@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cmus_running=$(ps -A | grep cmus)
 
@@ -15,7 +15,7 @@ if [ "$status" = "status stopped" ]; then
 elif [ "$status" = "status paused" ]; then
 	statlogo="⏸"
 elif [ "$status" = "status playing" ]; then
-	statlogo="▶️"
+	statlogo="▶"
 fi
 
 is_stream=$(cmus-remote -Q | grep -v file | grep stream)
@@ -26,10 +26,9 @@ else
 	artist=$(cmus-remote -Q | grep "tag artist" | cut -d ' ' -f 3-)
 	track=$(cmus-remote -Q | grep title | cut -d ' ' -f 3-)
 	tracklength=$(echo -n "$track" | wc -m)
-	if [ $tracklength -gt 30 ]; then
-		dtrack=$(echo "$track" -n | cut -c -20) | awk '{ print $1 "... |"}'
-		echo 'sa' $dtrack
-		# WORK IN PROGRESS
+	if [ $tracklength -gt 20 ]; then
+		# Cut the track info if it's greater than 20, then add 3 dots.
+		track=$(echo $(echo "$track" -n | cut -c -20)"... ")
 	fi
 	echo -e $statlogo $artist - $track'|'
 fi
