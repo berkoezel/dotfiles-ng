@@ -27,7 +27,6 @@ else
 	track=$(cmus-remote -Q | grep title | cut -d ' ' -f 3-)
 	tracklength=$(echo -n "$track" | wc -m)
 	if [ $tracklength -gt 20 ]; then
-		# Cut the track info if it's greater than 20, then add 3 dots.
 		track=$(echo $(echo "$track" -n | cut -c -20)"... ")
 	fi
 	echo -e $statlogo $artist - $track'|'
