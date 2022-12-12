@@ -85,7 +85,7 @@ myModMask :: KeyMask
 myModMask = mod4Mask       -- Sets modkey to super/windows key
 
 myTerminal :: String
-myTerminal = "/home/frogwine/.cargo/bin/alacritty" -- Sets default terminal
+myTerminal = "alacritty" -- Sets default terminal
 
 myCalculator :: String
 myCalculator = myTerminal ++ " -e qalc"
@@ -297,8 +297,8 @@ myKeys =
 main :: IO ()
 main = do
     -- Launching three instances of xmobar on their monitors.
-    xmproc0 <- spawnPipe "xmobar -x 0 /home/frogwine/.config/xmobar/xmobarrc0"
-    xmproc1 <- spawnPipe "xmobar -x 1 /home/frogwine/.config/xmobar/xmobarrc1"
+    xmproc0 <- spawnPipe "xmobar -x 0 /home/berk/.config/xmobar/xmobarrc0"
+    xmproc1 <- spawnPipe "xmobar -x 1 /home/berk/.config/xmobar/xmobarrc1"
     xmonad $ ewmh def
         { manageHook = ( isFullscreen --> doFullFloat ) <+> myManageHook <+> manageDocks
         , handleEventHook    = def serverModeEventHookCmd

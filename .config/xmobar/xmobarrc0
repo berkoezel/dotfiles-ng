@@ -15,7 +15,7 @@ Config { font = "xft:Noto Sans Mono:style=Bold:size=10:antialias=true:hinting=tr
        , allDesktops = True
        , persistent = True
        , alpha = 190 
-       , iconRoot = "/home/frogwine/.xmonad/xpm/"  -- default: "."
+       , iconRoot = "/home/berk/.xmonad/xpm/"  -- default: "."
        , commands = [
                     Run UnsafeStdinReader
 
@@ -27,7 +27,7 @@ Config { font = "xft:Noto Sans Mono:style=Bold:size=10:antialias=true:hinting=tr
 
                     , Run Date "<fc=#FFFFFF><fn=2> </fn><fn=3> %a - %d/%m/%Y - %H:%M</fn></fc>" "date" 50
 										
-                    , Run Com "/home/frogwine/.config/xmobar/stalonetray-padding-icon.sh" [] "stalonetray" 20
+                    , Run Com "/home/berk/.config/xmobar/stalonetray-padding-icon.sh" [] "stalonetray" 20
                     
                    , Run Kbd            [ ("tr" , "<fc=#FF0000>TUR</fc>")
                                         , ("us"         , "<fc=#5488ff>ENG</fc>")

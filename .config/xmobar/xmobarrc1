@@ -15,7 +15,7 @@ Config { font = "xft:Noto Sans Mono:style=Bold:size=10:antialias=true:hinting=tr
        , allDesktops = True
        , persistent = True
        , alpha = 190 
-       , iconRoot = "/home/frogwine/.xmonad/xpm/"  -- default: "."
+       , iconRoot = "/home/berk/.xmonad/xpm/"  -- default: "."
        , commands = [
                     Run UnsafeStdinReader
 
