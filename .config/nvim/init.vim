@@ -2,7 +2,6 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 "plugins
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
@@ -12,13 +11,13 @@ Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'
 Plug 'townk/vim-autoclose'
 Plug 'lilydjwg/colorizer'
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
 Plug 'sjl/badwolf'
 Plug 'tribela/vim-transparent'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'vim-python/python-syntax'
+Plug 'vim-autoformat/vim-autoformat'
 call plug#end()
 
 "settings
@@ -43,7 +42,7 @@ endfunction
 
 "current theme
 set background=dark
-colorscheme PaperColor 
+colorscheme gruvbox 
 let g:airline_theme = 'deus'
 let g:airline_powerline_fonts = 0 
 let g:molokai_original = 1
@@ -53,3 +52,18 @@ map <F5> :NERDTreeToggle<CR>
 "keybindings
 "TAB completion
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" tab width (spaces)
+set shiftwidth=3 smarttab
+set expandtab
+set tabstop=8 softtabstop=0
+filetype indent on
+set autoindent
+
+" python-syntax
+let python_highlight_all = 1
+
+" python autopep
+let g:formatdef_autopep8 = "'autopep8 - --range '.a:firstline.' '.a:lastline"
+let g:formatters_python = ['autopep8']
+au BufWrite * :Autoformat
