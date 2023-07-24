@@ -1,49 +1,44 @@
-#general-exports
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export ZSH="/home/berk/.oh-my-zsh"
 
-export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$PATH:/usr/lib/jvm/java-11-openjdk-amd64/bin/
-export PATH="$PATH":"$HOME/.local/bin"
-export PATH="$PATH":$HOME/.gobin
-export GOPATH="$HOME/go"
-export CLASSPATH=$JUNIT_HOME/junit-4.10.jar
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-export GO111MODULE=on
-export QT_QPA_PLATFORMTHEME=gtk2
-#plugins
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment one of the following lines to change the auto-update behavior
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' frequency 30 
+
+HIST_STAMPS="%d/%m/%y %T"
+
 plugins=(git
-         history
-         command-not-found
-         copypath
-         extract
-         )
+	command-not-found
+	copypath
+	extract)
 
-#aliases
+source $ZSH/oh-my-zsh.sh
 
-#youtube-dl
 alias ytm4a='youtube-dl -f "bestaudio/best" -ciw -o "%(title)s.%(ext)s" -v --extract-audio --audio-quality 0 --audio-format m4a'
 alias ytmp4='youtube-dl -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4" --output "%(title)s.%(ext)s"'
-
-#qemu
-alias qemu-isoboot='function _f(){qemu-system-x86_64 -hda $1 -cdrom $2 -boot d -m 8G -cpu host -smp 2 -machine accel=kvm -nic user,hostfwd=tcp::60022-:22};_f'
-alias qemu-vmup='function _f(){qemu-system-x86_64 -hda $1 -boot d -m 8G -cpu host -smp 2 -machine accel=kvm -nic user,hostfwd=tcp::60022-:22 };_f'
-
-##misc
-alias nightlight="redshift -O 3000 > /dev/null"
-alias displayoff="xset dpms force off"
-alias javac8="/usr/lib/jvm/java-1.8.0-amazon-corretto/bin/javac"
-alias java8="/usr/lib/jvm/java-1.8.0-amazon-corretto/bin/java"
-alias vim="nvim"
-alias lsalias="grep alias ~/.zshrc"
-alias sx='startx'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
-alias nano='nvim'
-alias vim='nvim'
 
-source $ZSH/oh-my-zsh.sh
+alias vim="nvim"
+alias vi="nvim"
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#zsh-options
-set nonomatch
-ZSH_THEME="lukerandall"
-source $ZSH/oh-my-zsh.sh

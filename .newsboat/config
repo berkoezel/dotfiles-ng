@@ -1,3 +1,0 @@
-include /usr/share/doc/newsboat/contrib/colorschemes/gruvbox
-
-bind-key BACKSPACE quit 

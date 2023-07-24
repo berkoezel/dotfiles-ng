@@ -5,19 +5,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
-Plug 'cocopon/pgmnt.vim'
-Plug 'cocopon/iceberg.vim'
 Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'
 Plug 'townk/vim-autoclose'
 Plug 'lilydjwg/colorizer'
-Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
-Plug 'sjl/badwolf'
 Plug 'tribela/vim-transparent'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'vim-python/python-syntax'
-Plug 'vim-autoformat/vim-autoformat'
 call plug#end()
 
 "settings

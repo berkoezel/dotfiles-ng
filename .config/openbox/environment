@@ -1,2 +1,0 @@
-(sleep 3s && lxpanel) &
-(sleep 3s && nitrogen --restore) &

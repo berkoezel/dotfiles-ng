@@ -1,8 +1,0 @@
-include /usr/share/doc/newsboat/contrib/colorschemes/solarized-dark
-highlight feedlist "---.*---" green default bold
-highlight feedlist ".*0/0.." default default invis
-reload-threads 100
-delete-read-articles-on-quit yes
-unbind-key q 
-bind-key BACKSPACE quit
-
