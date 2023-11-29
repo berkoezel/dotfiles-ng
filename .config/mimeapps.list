@@ -1,12 +1,12 @@
 [Default Applications]
 audio/mpeg=org.videolan.VLC.desktop;
-image/png=eog.desktop
+image/png=org.xfce.ristretto.desktop
 application/pdf=atril.desktop
-image/jpeg=eog.desktop
-inode/directory=pcmanfm.desktop
+image/jpeg=org.xfce.ristretto.desktop
+inode/directory=thunar.desktop
 text/x-shellscript=com.vscodium.codium.desktop
 x-scheme-handler/magnet=qbittorrent.desktop
 application/x-bittorrent=qbittorrent.desktop
 text/plain=com.vscodium.codium.desktop
-image/gif=eog.desktop
+image/gif=org.xfce.ristretto.desktop
 video/x-matroska=org.videolan.VLC.desktop
