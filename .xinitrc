@@ -17,5 +17,5 @@ wmname LG3D
 udiskie -a &
 blueman-applet &
 redshift -O 3500 &
-exec dwm 
-
+dunst &
+exec dbus-launch --exit-with-session dwm

@@ -20,6 +20,7 @@ plugins=(
    git
    zsh-autosuggestions
    zsh-syntax-highlighting
+   extract
    ) 
 
 source $ZSH/oh-my-zsh.sh
