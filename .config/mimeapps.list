@@ -1,14 +1,14 @@
 [Default Applications]
-audio/mpeg=org.videolan.VLC.desktop;
+audio/mpeg=mpv.desktop
+video/x-matroska=mpv.desktop
 image/png=org.xfce.ristretto.desktop
-application/pdf=atril.desktop
 image/jpeg=org.xfce.ristretto.desktop
+image/gif=org.xfce.ristretto.desktop
+application/pdf=atril.desktop
 inode/directory=thunar.desktop
-text/x-shellscript=com.vscodium.codium.desktop
+text/x-shellscript=nvim.desktop
+text/plain=nvim.desktop
 x-scheme-handler/magnet=qbittorrent.desktop
 application/x-bittorrent=qbittorrent.desktop
-text/plain=com.vscodium.codium.desktop
-image/gif=org.xfce.ristretto.desktop
-video/x-matroska=org.videolan.VLC.desktop
-x-scheme-handler/http=firefox-esr.desktop
-x-scheme-handler/https=firefox-esr.desktop;
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop;
