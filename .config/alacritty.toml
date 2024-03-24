@@ -1,0 +1,30 @@
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1"
+
+[font]
+size = 15
+
+[font.bold]
+family = "GoMono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "GoMono Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "GoMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "GoMono Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 2
+
+[window]
+dynamic_title = false
+opacity = 0.9
