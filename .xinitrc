@@ -18,4 +18,7 @@ udiskie -a &
 blueman-applet &
 redshift -O 3500 &
 dunst &
+pipewire &
+pipewire-pulse &
+wireplumber &
 exec dbus-launch --exit-with-session dwm
