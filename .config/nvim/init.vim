@@ -11,10 +11,11 @@ Plug 'rstacruz/vim-closer'
 Plug 'lilydjwg/colorizer'
 Plug 'morhetz/gruvbox'
 Plug 'tribela/vim-transparent'
-Plug 'rust-lang/rust.vim'
 Plug 'vim-scripts/c.vim'
 Plug 'wfxr/minimap.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'fatih/vim-go'
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
 
 call plug#end()
 
