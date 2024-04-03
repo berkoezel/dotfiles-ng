@@ -19,6 +19,12 @@ bindsym $mod+F2 exec $webbrowser
 set $editor nvim
 bindsym $mod+F3 exec $term -e $editor
 
+set $ss_save grimshot save screen - > ~/Pictures/Screenshots/$(date "+%d-%m-%y_%H:%M")_$(uuidgen | cut -d "-" -f 1).png
+bindsym $mod+Print exec $ss_save
+
+set $ss_copy grimshot copy area
+bindsym Print exec $ss_copy
+
 # Media controls
 ## Raise volume
 set $volumeup pactl -- set-sink-volume @DEFAULT_SINK@ +5%
@@ -51,15 +57,15 @@ bindsym $mod+d exec $menu
 # Decorative stuff 
 
 ## Wallpaper
-output * background /home/berk/Pictures/Wallpapers/2.jpg fill
+output * background /home/berk/Pictures/Wallpapers/main.jpg fill
 
 ## Gaps
 gaps outer 10 
 gaps inner 10 
 
 ## Disable title bar
-default_border pixel 1 
-default_floating_border pixel 1
+default_border pixel 3
+default_floating_border pixel 3
 
 # Management
 
