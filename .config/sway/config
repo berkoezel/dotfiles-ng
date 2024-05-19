@@ -70,7 +70,7 @@ default_floating_border pixel 3
 # Management
 
 ## Reload sway configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+creload
 
 ## Exit session
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -165,5 +165,9 @@ bar {
     }
 }
 
+input type:keyboard {
+    xkb_layout us,tr
+    xkb_options grp:rctrl_toggle
+}
 
 include /etc/sway/config.d/*
