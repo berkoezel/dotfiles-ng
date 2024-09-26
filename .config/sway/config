@@ -1,5 +1,8 @@
 include /etc/sway/config-vars.d/*
 
+# autostarts
+exec waybar
+
 # Mod-to-super
 set $mod Mod4
 
@@ -50,7 +53,7 @@ bindsym XF86AudioPrev exec $mediaprev
 set $mediapause playerctl play-pause 
 
 # Launcher
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu bemenu-run --fn "GoMono Nerd Font Mono 15" 
 bindsym $mod+d exec $menu
 
 
@@ -70,7 +73,7 @@ default_floating_border pixel 3
 # Management
 
 ## Reload sway configuration file
-bindsym $mod+Shift+creload
+bindsym $mod+Shift+c reload
 
 ## Exit session
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -147,23 +150,6 @@ bindsym Right resize grow width 5px
 bindsym Return mode "default"
 }
 bindsym $mod+r mode "resize"
-
-### Status bar
-bar {
-    position bottom  
-    height 25
-    font Red Hat Display SemiBold 20px  
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%d.%m.%Y %I.%M.%S %p'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
 
 input type:keyboard {
     xkb_layout us,tr
